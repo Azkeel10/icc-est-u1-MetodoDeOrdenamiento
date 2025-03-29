@@ -1,76 +1,88 @@
 public class MetodoSeleccion {
-//-----------------------------------------------------------------------------------------------------------------------
-    public void ordenarAcsendente(int[] arreglo){
-        for (int i = 0; i < arreglo.length - 1; i++) {
+
+    public int[] ordenarAcsendente(int[] arreglo, boolean valido){
+        int tam = arreglo.length;
+        int contComparaciones = 0;
+        int contCambios = 0;
+        
+        for (int i = 0; i < tam - 1; i++) {
             int iM = i;
 
-            for (int j = i + 1; j < arreglo.length; j++) {
-                
+            for (int j = i + 1; j < tam; j++) {
+                contComparaciones ++;
+
+                if (valido){
+                    System.out.print("\nComparaciones= " + contComparaciones + 
+                                    " = " + arreglo[i] + " -> " + arreglo[j]);
+
+                    System.out.print("\nIntercambio: " + arreglo[i] + " <-> " + arreglo[j]);
+                }
+
                 if (arreglo[j] < arreglo[iM]) { 
                     iM = j;
                 }
             }
             if (i != iM) {
+
+                contCambios ++;
+
                 int aux = arreglo[i];
                 arreglo[i] = arreglo[iM];
                 arreglo[iM] = aux;
             }
+            System.out.print(" \n");
+            System.out.print("Estado actual => ");
+            for(int c = 0; c < tam; c ++){ 
+
+                System.out.print(arreglo[c] + " ");
+                }
+            System.out.print("\n");
         }
+        int [] resultado = {contComparaciones,contCambios};
+        return resultado;
     }
 //-----------------------------------------------------------------------------------------------------------------------
-    public void ordenarDesendente(int[] arreglo){
-        for (int i = 0; i < arreglo.length - 1; i++) {
+    public int[] ordenarDesendente(int[] arreglo, boolean valido){
+        int tam = arreglo.length;
+        int contComparaciones = 0;
+        int contCambios = 0;
+
+        for (int i = 0; i < tam - 1; i++) {
             int iM = i;
     
-            for (int j = i + 1; j < arreglo.length; j++) {
+            for (int j = i + 1; j < tam; j++) {
+
+                contComparaciones ++;
+
+                if (valido){
+                    System.out.print("\nComparaciones= " + contComparaciones + 
+                                    " = " + arreglo[i] + " -> " + arreglo[j]);
+                                
+                    System.out.print("\nIntercambio: " + arreglo[i] + " <-> " + arreglo[j]);
+                }
+
                 if (arreglo[j] > arreglo[iM]) {
                     iM = j;
                 }
             }
             if (i != iM) {
+
+                contCambios ++;
+
                 int aux = arreglo[i];
                 arreglo[i] = arreglo[iM];
                 arreglo[iM] = aux;
             }
-        }
-    }
-//-----------------------------------------------------------------------------------------------------------------------
-    public void ordenar(int[] arreglo, boolean isDes){
-        if (isDes){
+            System.out.print(" \n");
+            System.out.print("Estado actual => ");
+            for(int c = 0; c < tam; c ++){ 
 
-            for (int i = 0; i < arreglo.length - 1; i++) {
-                int iM = i;
-    
-                for (int j = i + 1; j < arreglo.length; j++) {
-                    
-                    if (arreglo[j] < arreglo[iM]) {     //Se le usa < para hacer de manera desendente
-                        iM = j;
-                    }
+                System.out.print(arreglo[c] + " ");
                 }
-                if (i != iM) {
-                    int aux = arreglo[i];
-                    arreglo[i] = arreglo[iM];
-                    arreglo[iM] = aux;
-                }
-            }
-
-        }else{
-            
-            for (int i = 0; i < arreglo.length - 1; i++) {
-                int iM = i; 
-        
-                for (int j = i + 1; j < arreglo.length; j++) {
-                    if (arreglo[j] > arreglo[iM]) {     //Se le cambia > para invertir el orden
-                        iM = j;
-                    }
-                }
-                if (i != iM) {
-                    int aux = arreglo[i];
-                    arreglo[i] = arreglo[iM];
-                    arreglo[iM] = aux;
-                }
-            }
+            System.out.print("\n");
         }
+        int [] resultado = {contComparaciones,contCambios};
+        return resultado;
     }
 //-----------------------------------------------------------------------------------------------------------------------
     public void printArray(int[] arreglo){

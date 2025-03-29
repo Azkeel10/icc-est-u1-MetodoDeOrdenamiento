@@ -1,52 +1,80 @@
 public class MetodoBurbuja {
     
-    public void ordenarAcsendente(int[] arreglo){
+    public int [] ordenarAcsendente(int[] arreglo,boolean valido){
+        int tam = arreglo.length;
+        int contComparaciones = 0;
+        int contCambios = 0;
 
-        for (int i=0; i<arreglo.length;i++){
+        for (int i=0; i < tam;i++){
 
-            for (int j=i+1; j<arreglo.length;j++){
+            for (int j = i + 1; j < tam; j++){
 
-                //System.out.println("i=" + i + " j=" + j);
-                if (arreglo[i] > arreglo[j]){  //condicion de intercambio
-                    // Intercambio
+                contComparaciones ++;
+
+                if (valido){
+                    System.out.print("\nComparaciones= " + contComparaciones + 
+                                    " = " + arreglo[i] + " -> " + arreglo[j]);
+
+                    System.out.print("\nIntercambio: " + arreglo[i] + " <-> " + arreglo[j]);
+                }
+
+                if (arreglo[i] > arreglo[j]){  
+
+                    contCambios++;
+
                     int aux = arreglo[i];
                     arreglo[i] = arreglo[j];
                     arreglo[j] = aux;
                 }
             }
+            System.out.print(" \n");
+            System.out.print("Estado actual => ");
+            for(int c = 0; c < tam; c ++){ 
+
+                System.out.print(arreglo[c] + " ");
+                }
+            System.out.print("\n");
         }
+        int[] resultados = {contComparaciones, contCambios};
+        return resultados;
     }
+//---------------------------------------------------------------------------------------------------------------------
+    public int [] ordenarDesendente(int[] arreglo,boolean valido){
+        int tam = arreglo.length;
+        int contComparaciones = 0;
+        int contCambios = 0;
+        for (int i=0; i < tam;i++){
 
-    public void ordenar(int[] arreglo,boolean isDes){
+            for (int j = i + 1; j < tam; j++){
+                contComparaciones ++;
 
-        for (int i=0; i<arreglo.length;i++){
+                if (valido){
+                    System.out.print("\nComparaciones= " + contComparaciones + 
+                                    " = " + arreglo[i] + " -> " + arreglo[j]);
 
-            for (int j=i+1; j<arreglo.length;j++){
-
-                //System.out.println("i=" + i + " j=" + j);
-                if (isDes){
-                    if (arreglo[i] < arreglo[j]){  //condicion de intercambio
-                        // Intercambio
-                        
-                        int aux = arreglo[i];
-                        arreglo[i] = arreglo[j];
-                        arreglo[j] = aux;
-                    }
+                    System.out.print("\nIntercambio: " + arreglo[i] + " <-> " + arreglo[j]);
                 }
-                else{
-                    if (arreglo[i] > arreglo[j]){  //condicion de intercambio
-                        // Intercambio
-                        
-                        int aux = arreglo[i];
-                        arreglo[i] = arreglo[j];
-                        arreglo[j] = aux;
-                    }
+
+                if (arreglo[i] < arreglo[j]) {
+                    contCambios++;
+
+                    int aux = arreglo[i];
+                    arreglo[i] = arreglo[j];
+                    arreglo[j] = aux;
                 }
-                
             }
-        }
-    }
+            System.out.print(" \n");
+            System.out.print("Estado actual => ");
+            for(int c = 0; c < tam; c ++){ 
 
+                System.out.print(arreglo[c] + " ");
+                }
+            System.out.print("\n");
+        }
+        int[] resultados = {contComparaciones, contCambios};
+        return resultados;
+    }
+//---------------------------------------------------------------------------------------------------------------------
     //def imprimir_arreglo(arreglo)
     public void imprimirArreglo(int[] arreglo){
 
