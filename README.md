@@ -7,7 +7,7 @@
 - **Asignatura:** Estructura de Datos
 - **Carrera:** Computación
 - **Estudiante:** Jaime Loja
-- **Fecha:** 28/03/2025
+- **Fecha:** 30/03/2025
 - **Profesor:** Ing. Pablo Torres
 
 ---
