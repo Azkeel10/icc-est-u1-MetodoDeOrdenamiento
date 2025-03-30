@@ -5,11 +5,12 @@ public class App {
     
     // [def main()] en java
     public static void main(String[] args) throws Exception {
-        System.out.println("\n----------Programa iniciado----------\n");
+        System.out.println("\n----------Programa iniciado----------");
 
 //---------------------------------------------------------------------------------------------------------------------    
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
+
 //---------------------------------------------------------------------------------------------------------------------
         while (continuar) { 
             
@@ -63,16 +64,21 @@ public class App {
                     if (ascendemente) {
                         
                         resultado = mB.ordenarAcsendente(listado, valido); 
-            
-                        System.out.println("\n-----Ordenado ascendemente-----\n");
+
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado ascendemente-----\n");
+
+                        System.out.println("-----Arreglo ordenado-----");
                         mB.imprimirArreglo(listado);  
                         
                         System.out.println("\nComparaciones= " + resultado[0]);
                         System.out.println("Cambios= " + resultado[1]);
                     } else {
                         resultado = mB.ordenarDesendente(listado,valido);
-            
-                        System.out.println("\n-----Ordenado descendentemente-----\n");
+                        
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado descendentemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
                         mB.imprimirArreglo(listado); 
             
                         System.out.println("\nComparaciones= " + resultado[0]);
@@ -92,7 +98,9 @@ public class App {
                     if(ascendemente){
                         resultado = mS.ordenarAcsendente(listado, valido); 
 
-                        System.out.println("\n-----Ordenado ascendemente-----\n");
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado ascendemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
                         mS.printArray(listado);  
                         
                         System.out.println("\nComparaciones= " + resultado[0]);
@@ -100,7 +108,9 @@ public class App {
                     } else{
                         resultado = mS.ordenarDesendente(listado, valido); 
 
-                        System.out.println("\n-----Ordenado descendentemente-----\n");
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado descendentemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
                         mS.printArray(listado);  
                         
                         System.out.println("\nComparaciones= " + resultado[0]);
@@ -119,7 +129,9 @@ public class App {
                     if(ascendemente){
                         resultado = mI.ordenarAcsendente(listado, valido); 
 
-                        System.out.println("\n-----Ordenado ascendemente-----\n");
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado ascendemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
                         mI.printArray(listado);  
                         
                         System.out.println("\nComparaciones= " + resultado[0]);
@@ -127,7 +139,9 @@ public class App {
                     } else {
                         resultado = mI.ordenarDesendente(listado, valido); 
 
-                        System.out.println("\n-----Ordenado Desendentemente-----\n");
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado Desendentemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
                         mI.printArray(listado);  
                         
                         System.out.println("\nComparaciones= " + resultado[0]);
@@ -147,7 +161,9 @@ public class App {
 
                         resultado = mBM.ordenarAcsendente(listado, valido);
 
-                        System.out.println("\n-----Ordenado ascendemente-----\n");
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado ascendemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
 
                         mBM.printArray(listado);
 
@@ -158,7 +174,9 @@ public class App {
 
                         resultado = mBM.ordenarDesendente(listado,valido);
 
-                        System.out.println("\n-----Ordenado Desendentemente-----\n");
+                        System.out.println("\n-----Fin del metodo-----");
+                        System.out.println("-----Ordenado Desendentemente-----\n");
+                        System.out.println("-----Arreglo ordenado-----");
 
                         mBM.printArray(listado);
                         System.out.println("\nComparaciones -> " + resultado[0]);
